@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/app_bar_main">
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vip_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </android.support.v4.view.ViewPager>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_now_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/tv_now_city"
+            android:textSize="22sp"
+            android:text="上海市"
+            android:layout_width="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tv_now_data"
+            android:layout_below="@id/tv_now_city"
+            android:text="02月20日 周二"
+            android:textSize="12sp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/rl_now_content"
+        android:layout_below="@id/rl_now_top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_now_tem"
+            android:gravity="center"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="20℃"
+            android:textSize="60sp"
+            android:layout_width="150dp"
+            android:layout_height="150dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_now_cloud"
+            android:layout_below="@id/tv_now_tem"
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_height="48dp">
+            <ImageView
+                android:id="@+id/iv_now_cloud"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:gravity="center_vertical"
+                android:id="@+id/tv_now_cloud"
+                android:layout_below="@id/tv_now_tem"
+                android:text="多云 26℃~20℃"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:padding="8dp"
+            android:id="@+id/ll_now_content"
+            android:layout_below="@id/ll_now_cloud"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_now_humidity"
+                    android:text="湿度：未知%"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_now_windspeed"
+                    android:text="风速：3km/h"
+                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_now_visibility"
+                    android:text="可见度：未知km"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_now_uxindex"
+                    android:text="紫外线指数：未知"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:id="@+id/tv_now_sunrise"
+                    android:text="日出：05:41"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_now_sunset"
+                    android:text="日落：17:53"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <HorizontalScrollView
+            android:layout_below="@id/ll_now_content"
+            android:id="@+id/hsv_now_below"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/ll_forecast"
+                android:padding="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            </LinearLayout>
+        </HorizontalScrollView>
+    </RelativeLayout>
+</RelativeLayout>

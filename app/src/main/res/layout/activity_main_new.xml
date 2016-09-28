@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/rl_top"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/imv_now_forecast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/weather_999_0"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_now_city"
+                    android:text="杭州"
+                    android:textColor="#FF5055"
+                    android:textSize="12sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_now_data"
+                    android:textSize="12sp"
+                    android:textColor="#FF5055"
+                    android:text="星期四,九月22日"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/ll_bottom"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/ll_forecast_content"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/item_daily_forecast_new"/>
+            <include layout="@layout/item_daily_forecast_new"/>
+            <include layout="@layout/item_daily_forecast_new"/>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <RelativeLayout
+        android:gravity="center_horizontal"
+        android:layout_below="@id/rl_top"
+        android:layout_above="@id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/tv_now_temp"
+            android:textSize="160sp"
+            android:text="18°"
+            android:textColor="#FF5055"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+</RelativeLayout>
